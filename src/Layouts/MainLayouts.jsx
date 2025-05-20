@@ -1,13 +1,18 @@
-import React from 'react';
 import { Outlet } from 'react-router';
+import Header from '../Component/Header';
+import Footer from '../Component/Footer';
 
 const MainLayouts = () => {
     return (
         <div>
-            <h1>Joy</h1>
+            <Header />
             <Outlet />
+            <Footer />
         </div>
     );
 };
 
 export default MainLayouts;
+
+// #006838
+// #40b93c
