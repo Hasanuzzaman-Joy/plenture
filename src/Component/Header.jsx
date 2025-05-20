@@ -1,4 +1,7 @@
+
+import { useContext } from 'react';
 import { NavLink, Link } from 'react-router';
+import AuthContext from '../Context/AuthContext';
 
 const link = <div className='flex text-lg font-medium'>
     <li><NavLink to='/'>Home</NavLink></li>
@@ -10,6 +13,13 @@ const link = <div className='flex text-lg font-medium'>
 </div>
 
 const Header = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+
+    const logOutForm = () =>{
+        logOut()
+    }
+
     return (
         <div className="navbar w-full md:w-11/12 mx-auto">
             <div className="navbar-start">
@@ -32,11 +42,8 @@ const Header = () => {
                     {link}
                 </ul>
             </div>
-            <div className="navbar-end flex gap-4">
-                <Link to='/login' className='btn btn-primary md:px-8'>Login</Link>
-                <Link to='/register' className='btn btn-primary md:px-8'>Register</Link>
-            </div>
-            {/* {
+
+            {
                 user ?
                     (<div className="navbar-end flex gap-4">
                         <div className="dropdown dropdown-left dropdown-bottom">
@@ -51,18 +58,18 @@ const Header = () => {
                                 tabIndex={0}
                                 className="menu dropdown-content rounded-box z-10 w-[220px] p-2 shadow-lg bg-[#d7e1db]"
                             >
-                                <li className='border-b-[1px] border-[#a7a7a7]'><h1 className='bg-transparent active:bg-transparent focus:bg-transparent font-bold'>Balance : {amount} BDT</h1></li>
-                                <li><button onClick={signOut} className='bg-transparent active:bg-transparent focus:bg-transparent font-bold'>Log Out</button></li>
+                                <li className='border-b-[1px] border-[#a7a7a7]'><h1 className='bg-transparent active:bg-transparent focus:bg-transparent font-bold'>{user.displayName}</h1></li>
+                                <li><button onClick={logOutForm} className='bg-transparent active:bg-transparent focus:bg-transparent font-bold'>Log Out</button></li>
                             </ul>
                         </div>
                     </div>
                     ) : (
                         <div className="navbar-end flex gap-4">
-                            <Link to='/login' className='btn btn-outline btn-primary md:px-8'>Login</Link>
-                            <Link to='/register' className='btn btn-primary md:px-8'>Register</Link>
+                            <Link to='/login' className='btn bg-[#006838] text-white md:px-8'>Login</Link>
+                            <Link to='/register' className='btn bg-[#40b93c] text-white md:px-8'>Register</Link>
                         </div>
                     )
-            } */}
+            }
         </div>
     );
 };

@@ -1,12 +1,48 @@
-# React + Vite
+# 🌿 Plenture
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Plenture is a modern, user-friendly React-based web application that helps plant lovers manage and monitor care tasks—like watering, fertilizing, and tracking plant health.
 
-Currently, two official plugins are available:
+## 🌐 Live Site
+👉 [Visit Plenture Live](https://plenture-tree.web.app/) 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Key Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🔒 **User Authentication** –  Secure login and registration system powered by Firebase
+- 🌍 **All Plants** –  View plants added by all users
+- 🌱 **My Plants** – View specific information for each bill
+- ➕ **Add Plant** – Add new plant entries with care details
+- 📱 **Fully Responsive** – Optimized for all devices using Tailwind CSS
+- ✨ **Beautiful UI** – Enhanced with Daisy UI
+
+---
+
+## 🛠️ Technologies & Packages Used
+
+| npm Packages          | Purpose                                      |
+|---------------------------|----------------------------------------------|
+| **React.js**              | Frontend framework                           |
+| **React Router**          | Client-side routing                          |
+| **Tailwind CSS**          | Utility-first CSS for styling                |
+| **Firebase**              | Authentication                               |
+| **React Icons**           | Icon set for UI                              |
+| **Daisy UI**              | Tailwind-based UI component library          |
+| **Swiper JS**             | Responsive carousel/slider                   |
+| **Date-Fns**              | Date manipulation library                    |
+|  **React Toastify**        | Beautiful, customizable toast notifications  |
+
+---
+
+## 📄 Pages Overview
+
+- **Home** – Welcome page with introduction
+- **All Plants** – View all users’ added plants
+- **My Plants** – View, update, or delete your own plant
+- **Add Plant** – Form to add new plant entries
+- **Login** –  Sign in to your account securely
+- **Register** – Create a new user account
+
+---
+
+Made with ❤️ by Hasanuzzaman Joy

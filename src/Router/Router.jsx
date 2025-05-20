@@ -6,6 +6,7 @@ import Login from "../Pages/Authentications/Login";
 import AddPlant from '../Pages/Plants/AddPlant'
 import Plants from "../Pages/Plants/Plants";
 import MyPlants from "../Pages/Plants/MyPlants";
+import ProtectedRoute from "../Component/ProtectedRoute/ProtectedRoute";
 
 const router = createBrowserRouter([
     {
@@ -30,11 +31,15 @@ const router = createBrowserRouter([
             },
             {
                 path:'/addPlant',
-                Component: AddPlant
+                element:<ProtectedRoute>
+                    <AddPlant />
+                </ProtectedRoute>
             },
             {
                 path:'/myPlants',
-                Component: MyPlants
+                element:<ProtectedRoute>
+                    <MyPlants />
+                </ProtectedRoute>
             }
         ]
     }
