@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { NavLink, Link } from 'react-router';
 import AuthContext from '../Context/AuthContext';
 
-const link = <div className='flex text-lg font-medium'>
+const link = <div className='flex flex-col md:flex-row text-lg font-medium'>
     <li><NavLink to='/'>Home</NavLink></li>
     <li><NavLink to='/Plants'>All Plants</NavLink></li>
     <li><NavLink to='/addPlant'>Add Plant</NavLink></li>
@@ -29,7 +29,7 @@ const Header = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu bg-[#d7e1db] font-bold menu-sm dropdown-content rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        className="menu bg-[#acffd1] font-bold menu-sm dropdown-content rounded-box z-1 mt-3 w-52 p-2 shadow">
                         {link}
                     </ul>
                 </div>

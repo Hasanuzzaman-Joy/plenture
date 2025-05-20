@@ -10,11 +10,10 @@ Plenture is a modern, user-friendly React-based web application that helps plant
 ## 🚀 Key Features
 
 - 🔒 **User Authentication** –  Secure login and registration system powered by Firebase
-- 🌍 **All Plants** –  View plants added by all users
-- 🌱 **My Plants** – View specific information for each bill
-- ➕ **Add Plant** – Add new plant entries with care details
 - 📱 **Fully Responsive** – Optimized for all devices using Tailwind CSS
 - ✨ **Beautiful UI** – Enhanced with Daisy UI
+- 🌱 **Personal Plant Dashboard** – Users can add, view, and manage their own plants
+- 🧾 **Plant Care Details** – Track watering frequency, care level, health status, and more
 
 ---
 
@@ -30,7 +29,9 @@ Plenture is a modern, user-friendly React-based web application that helps plant
 | **Daisy UI**              | Tailwind-based UI component library          |
 | **Swiper JS**             | Responsive carousel/slider                   |
 | **Date-Fns**              | Date manipulation library                    |
-|  **React Toastify**        | Beautiful, customizable toast notifications  |
+| **React Toastify**        | Beautiful, customizable toast notifications  |
+| **React Tooltip**         | Tooltips for enhancing UI                    |
+| **Lottie React**          | Render Lottie animations in React            |
 
 ---
 
@@ -38,7 +39,7 @@ Plenture is a modern, user-friendly React-based web application that helps plant
 
 - **Home** – Welcome page with introduction
 - **All Plants** – View all users’ added plants
-- **My Plants** – View, update, or delete your own plant
+- **My Plants** – View, update, or delete own plant
 - **Add Plant** – Form to add new plant entries
 - **Login** –  Sign in to your account securely
 - **Register** – Create a new user account

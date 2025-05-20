@@ -7,6 +7,7 @@ import AddPlant from '../Pages/Plants/AddPlant'
 import Plants from "../Pages/Plants/Plants";
 import MyPlants from "../Pages/Plants/MyPlants";
 import ProtectedRoute from "../Component/ProtectedRoute/ProtectedRoute";
+import Error from "../Pages/Error";
 
 const router = createBrowserRouter([
     {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
                 </ProtectedRoute>
             }
         ]
+    },
+    {
+        path:'*',
+        Component:Error
     }
 ])
 
