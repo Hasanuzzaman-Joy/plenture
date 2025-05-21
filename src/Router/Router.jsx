@@ -10,6 +10,7 @@ import ProtectedRoute from "../Component/ProtectedRoute/ProtectedRoute";
 import Error from "../Pages/Error";
 import Loading from '../Component/Loading'
 import PlantDetails from "../Pages/Plants/PlantDetails";
+import UpdatePlant from "../Pages/Plants/UpdatePlant";
 
 const router = createBrowserRouter([
     {
@@ -49,10 +50,19 @@ const router = createBrowserRouter([
                 </ProtectedRoute>
             },
             {
+                path: '/updatePlant/:id',
+                loader: ({ params }) => fetch(`http://localhost:5000/plants/${params.id}`),
+                element: <ProtectedRoute>
+                    <UpdatePlant />
+                </ProtectedRoute>
+            },
+            {
                 path: '/myPlants',
+                loader: () => fetch('http://localhost:5000/plants'),
                 element: <ProtectedRoute>
                     <MyPlants />
-                </ProtectedRoute>
+                </ProtectedRoute>,
+                hydrateFallbackElement: <Loading />
             }
         ]
     },
