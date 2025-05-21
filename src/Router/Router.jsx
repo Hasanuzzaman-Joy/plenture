@@ -33,9 +33,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/Plants',
-                loader: () => fetch('http://localhost:5000/plants'),
-                Component: Plants,
-                hydrateFallbackElement: <Loading />
+                Component: Plants
             },
             {
                 path: '/Plants/:id',
