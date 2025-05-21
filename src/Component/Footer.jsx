@@ -4,16 +4,20 @@ import { NavLink } from 'react-router';
 
 const Footer = () => {
 
-    const link = <div className='flex gap-5 text-lg font-medium'>
+    const link = <div className='flex flex-col md:flex-row gap-5 text-base font-bold'>
         <li><NavLink to='/'>Home</NavLink></li>
+        <li><NavLink to='/Plants'>All Plants</NavLink></li>
+        <li><NavLink to='/addPlant'>Add Plant</NavLink></li>
+        <li><NavLink to='/myPlants'>My Plants</NavLink></li>
         <li><NavLink to='/login'>Login</NavLink></li>
         <li><NavLink to='/register'>Register</NavLink></li>
     </div>
 
     return (
         <footer className="footer footer-horizontal w-full md:w-11/12 px-4 md:px-0 mx-auto footer-center bg-[#43d58552] text-base-content p-10">
-            <div className='w-30'>
-                <img src="https://i.ibb.co/Wv1hYvK4/logo.png" alt="logo" />
+            <div className='flex justify-center items-center'>
+                <img src="https://i.ibb.co/7NvMPFQp/logo2.png" className='w-16' alt="logo" />
+                <h1 className='text-[#006838] font-bold text-xl -ml-[15px]'>Plenture</h1>
             </div>
             <nav className="grid grid-flow-col gap-4 -mt-7">
                 <ul>
@@ -22,8 +26,8 @@ const Footer = () => {
             </nav>
             <nav>
                 <div>
-                    <div className="flex justify-center items-center gap-2 -mt-6 mb-4"><IoIosMail size={25} /> <h1 className="font-semibold text-base">Email: abc@gmail.com</h1></div>
-                    <div className="flex justify-center items-center gap-2 mb-4"><FaPhoneAlt size={18} /> <h1 className="font-semibold text-base">Phone: +880187723218</h1></div>
+                    <div className="flex justify-center items-center gap-2 -mt-6 mb-4"><IoIosMail size={25} /> <h1 className="font-normal text-base"><strong>Email</strong>: abc@gmail.com</h1></div>
+                    <div className="flex justify-center items-center gap-2 mb-4"><FaPhoneAlt size={18} /> <h1 className="font-normal text-base"><strong>Phone</strong>: +880187723218</h1></div>
                 </div>
                 <div className="grid grid-flow-col gap-4">
                     <a href='https://x.com/' target='blank'>

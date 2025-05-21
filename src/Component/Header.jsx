@@ -33,8 +33,9 @@ const Header = () => {
                         {link}
                     </ul>
                 </div>
-                <div className='w-30'>
-                    <img src="https://i.ibb.co/Wv1hYvK4/logo.png" alt="logo" />
+                <div className='flex justify-center items-center'>
+                    <img src="https://i.ibb.co/7NvMPFQp/logo2.png" className='w-16' alt="logo" />
+                    <h1 className='text-[#006838] font-bold text-xl -ml-[7px]'>Plenture</h1>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
