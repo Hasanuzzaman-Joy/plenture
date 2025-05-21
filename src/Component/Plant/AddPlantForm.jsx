@@ -3,10 +3,13 @@ import { GiPineTree } from "react-icons/gi";
 import { useContext } from 'react';
 import AuthContext from '../../Context/AuthContext';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router';
 
 const AddPlantForm = () => {
 
     const { user } = useContext(AuthContext);
+
+    const navigate =useNavigate();
 
     const plantForm = (e) => {
         e.preventDefault();
@@ -33,8 +36,10 @@ const AddPlantForm = () => {
                         showConfirmButton: false,
                         timer: 2500
                     });
-
-                    form.reset()
+                    
+                    setTimeout(() => {
+                        navigate('/myPlants')
+                    }, 2200);
                 }
             })
             .catch(error => {
@@ -133,7 +138,7 @@ const AddPlantForm = () => {
                         type="submit"
                         data-tooltip-id="add-tooltip"
                         data-tooltip-content="Click here to add a new plant to your collections"
-                        className="w-full px-8 py-2 font-semibold rounded-md bg-[#006838] text-white border border-transparent cursor-pointer transition-all"
+                        className="w-full px-8 py-2 font-semibold rounded-md bg-[#006838] hover:bg-[#40b93c] text-white border border-transparent cursor-pointer transition-all"
                     >
                         Add Plant
                     </button>

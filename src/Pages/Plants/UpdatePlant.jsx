@@ -127,7 +127,7 @@ const UpdatePlant = () => {
                         type="submit"
                         data-tooltip-id="add-tooltip"
                         data-tooltip-content="Click here to add a new plant to your collections"
-                        className="w-full px-8 py-2 font-semibold rounded-md bg-[#006838] text-white border border-transparent cursor-pointer transition-all"
+                        className="w-full px-8 py-2 font-semibold rounded-md bg-[#006838] hover:bg-[#40b93c] text-white border border-transparent cursor-pointer transition-all"
                     >
                         Add Plant
                     </button>

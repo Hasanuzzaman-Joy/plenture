@@ -35,7 +35,7 @@ const Plants = () => {
                                     <td>{plant.care}</td>
                                     <td>{plant.wateringFrequency}</td>
                                     <td>{format(new Date(plant.createdAt), 'dd MMMM, yyyy')}</td>
-                                    <td><Link to={`/Plants/${plant._id}`} className='btn bg-[#006838] text-white md:px-8'>View Details</Link></td>
+                                    <td><Link to={`/Plants/${plant._id}`} className='btn bg-[#006838] hover:bg-[#40b93c] transition-all text-white md:px-8'>View Details</Link></td>
                                 </tr>
                             ))
                         }

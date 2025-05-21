@@ -59,7 +59,7 @@ const PlantDetails = () => {
                     </div>
 
                     <div className="pt-4">
-                        <Link to='/plants' className="btn bg-[#40b93c] w-full">Back to All Plants</Link>
+                        <Link to='/plants' className="btn bg-[#006838] hover:bg-[#40b93c] transition-all text-white w-full">Back to All Plants</Link>
                     </div>
                 </div>
             </div>

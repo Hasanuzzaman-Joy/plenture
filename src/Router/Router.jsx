@@ -19,7 +19,9 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                Component: Home
+                loader: () => fetch('http://localhost:5000/recent-plants'),
+                Component: Home,
+                hydrateFallbackElement: <Loading />
             },
             {
                 path: '/register',
