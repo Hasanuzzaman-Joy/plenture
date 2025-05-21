@@ -5,8 +5,6 @@ const Plants = () => {
 
     const plantData = useLoaderData();
 
-    // const { care, category, createdAt, description, email, healthStatus, lastWateredDate, name, nextWateringDate, plantName, plant_photo, wateringFrequency, _id } = plantData;
-
     return (
         <div className='w-full md:w-11/12 mx-auto py-10 md:px-0 px-4'>
             <h1 className="text-4xl font-bold text-center mb-6">Explore Plants on Plenture</h1>
@@ -37,7 +35,7 @@ const Plants = () => {
                                     <td>{plant.care}</td>
                                     <td>{plant.wateringFrequency}</td>
                                     <td>{format(new Date(plant.createdAt), 'dd MMMM, yyyy')}</td>
-                                    <td><Link to={`/PlantDetails/${plant._id}`} className='btn bg-[#006838] text-white md:px-8'>View Details</Link></td>
+                                    <td><Link to={`/Plants/${plant._id}`} className='btn bg-[#006838] text-white md:px-8'>View Details</Link></td>
                                 </tr>
                             ))
                         }

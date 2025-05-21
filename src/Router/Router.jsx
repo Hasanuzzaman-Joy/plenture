@@ -13,50 +13,52 @@ import PlantDetails from "../Pages/Plants/PlantDetails";
 
 const router = createBrowserRouter([
     {
-        path:'/',
-        Component:MainLayouts,
-        children:[
+        path: '/',
+        Component: MainLayouts,
+        children: [
             {
-                index:true,
+                index: true,
                 Component: Home
             },
             {
-                path:'/register',
+                path: '/register',
                 Component: Register
             },
             {
-                path:'/login',
+                path: '/login',
                 Component: Login
             },
             {
-                path:'/Plants',
+                path: '/Plants',
                 loader: () => fetch('http://localhost:5000/plants'),
                 Component: Plants,
                 hydrateFallbackElement: <Loading />
             },
             {
-                path:'/PlantDetails/:id',
-                // loader: () => fetch('http://localhost:5000/plants'),
-                Component: PlantDetails,
+                path: '/Plants/:id',
+                loader: ({ params }) => fetch(`http://localhost:5000/plants/${params.id}`),
+                element: <ProtectedRoute>
+                    <PlantDetails />
+                </ProtectedRoute>,
                 hydrateFallbackElement: <Loading />
             },
             {
-                path:'/addPlant',
-                element:<ProtectedRoute>
+                path: '/addPlant',
+                element: <ProtectedRoute>
                     <AddPlant />
                 </ProtectedRoute>
             },
             {
-                path:'/myPlants',
-                element:<ProtectedRoute>
+                path: '/myPlants',
+                element: <ProtectedRoute>
                     <MyPlants />
                 </ProtectedRoute>
             }
         ]
     },
     {
-        path:'*',
-        Component:Error
+        path: '*',
+        Component: Error
     }
 ])
 
