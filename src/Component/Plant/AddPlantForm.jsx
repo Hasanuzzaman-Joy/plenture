@@ -1,7 +1,46 @@
 import { Tooltip } from 'react-tooltip';
 import { GiPineTree } from "react-icons/gi";
+import { useContext } from 'react';
+import AuthContext from '../../Context/AuthContext';
+import Swal from 'sweetalert2';
 
 const AddPlantForm = () => {
+
+    const { user } = useContext(AuthContext);
+
+    const plantForm = (e) => {
+        e.preventDefault();
+
+        const form = e.target;
+        const formData = new FormData(form);
+        const allData = Object.fromEntries(formData);
+
+        fetch('http://localhost:5000/plants',
+            {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(allData)
+            }
+        )
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: "You've successfully added",
+                        icon: "success",
+                        showConfirmButton: false,
+                        timer: 2500
+                    });
+
+                    form.reset()
+                }
+            })
+            .catch(error => {
+                console.error('Error submitting form:', error);
+            });
+    }
 
     return (
         <div className=' bg-[#f4f3f3] w-full md:w-11/12 mx-auto py-10 md:px-0 px-4'>
@@ -15,7 +54,7 @@ const AddPlantForm = () => {
                     <GiPineTree size={50} />
                     <hr className="w-full dark:text-gray-600" />
                 </div>
-                <form className="space-y-8">
+                <form onSubmit={plantForm} className="space-y-8">
                     <div className="space-y-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                             <div className="space-y-2">
@@ -23,8 +62,8 @@ const AddPlantForm = () => {
                                 <input type="text" name="plant_photo" id="photo" placeholder="Add Your Plant Image Link" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
                             </div>
                             <div className="space-y-2">
-                                <label htmlFor="name" className="block text-sm font-semibold">Plant Name</label>
-                                <input type="text" name="name" id="name" placeholder="Your Plant Name" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
+                                <label htmlFor="plantName" className="block text-sm font-semibold">Plant Name</label>
+                                <input type="text" name="plantName" id="plantName" placeholder="Your Plant Name" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
                             </div>
                         </div>
                         <div className="space-y-2">
@@ -82,11 +121,11 @@ const AddPlantForm = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                             <div className="space-y-2">
                                 <label htmlFor="email" className="block text-sm font-semibold">Email address</label>
-                                <input type="email" name="email" id="email" placeholder="abc@gmail.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
+                                <input type="email" value={user.email} name="email" id="email" placeholder="abc@gmail.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
                             </div>
                             <div className="space-y-2">
                                 <label htmlFor="name" className="block text-sm font-semibold">Name</label>
-                                <input type="text" name="name" id="name" placeholder="Your Name" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
+                                <input type="text" value={user.displayName} name="name" id="name" placeholder="Your Name" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
                             </div>
                         </div>
                     </div>
@@ -94,7 +133,7 @@ const AddPlantForm = () => {
                         type="submit"
                         data-tooltip-id="add-tooltip"
                         data-tooltip-content="Click here to add a new plant to your collections"
-                        className="w-full px-8 py-2 font-semibold rounded-md bg-[#006838] text-white border border-transparent hover:text-black hover:bg-transparent hover:border-gray-300 cursor-pointer transition-all"
+                        className="w-full px-8 py-2 font-semibold rounded-md bg-[#006838] text-white border border-transparent cursor-pointer transition-all"
                     >
                         Add Plant
                     </button>

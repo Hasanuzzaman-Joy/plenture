@@ -8,6 +8,8 @@ import Plants from "../Pages/Plants/Plants";
 import MyPlants from "../Pages/Plants/MyPlants";
 import ProtectedRoute from "../Component/ProtectedRoute/ProtectedRoute";
 import Error from "../Pages/Error";
+import Loading from '../Component/Loading'
+import PlantDetails from "../Pages/Plants/PlantDetails";
 
 const router = createBrowserRouter([
     {
@@ -28,7 +30,15 @@ const router = createBrowserRouter([
             },
             {
                 path:'/Plants',
-                Component: Plants
+                loader: () => fetch('http://localhost:5000/plants'),
+                Component: Plants,
+                hydrateFallbackElement: <Loading />
+            },
+            {
+                path:'/PlantDetails/:id',
+                // loader: () => fetch('http://localhost:5000/plants'),
+                Component: PlantDetails,
+                hydrateFallbackElement: <Loading />
             },
             {
                 path:'/addPlant',
