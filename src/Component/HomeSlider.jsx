@@ -30,7 +30,7 @@ const HomeSlider = () => {
               data-swiper-parallax="-200"
             >
               <div className='flex flex-col justify-center items-center'>
-                <h1 className="text-4xl md:text-4xl font-bold text-center text-white">Your Green Companion for Plant Wellness</h1>
+                <h1 className="text-3xl md:text-4xl font-bold text-center text-white px-5 md:px-0">Your Green Companion for Plant Wellness</h1>
                 <p className="text-lg medium w-[70%] text-center pt-5 text-white">Never miss a payment again. Monitor all your bills from electricity to tuition in one unified dashboard.</p>
               </div>
             </div>
@@ -49,7 +49,7 @@ const HomeSlider = () => {
               data-swiper-parallax="-200"
             >
               <div className='flex flex-col justify-center items-center'>
-                <h1 className="text-4xl md:text-4xl font-bold text-center text-white">Grow Better, Care Smarter</h1>
+                <h1 className="text-3xl md:text-4xl font-bold text-center text-white px-5 md:px-0">Grow Better, Care Smarter</h1>
                 <p className="text-lg medium w-[70%] text-center pt-5 text-white">Monitor, manage, and master your plant collection with ease.</p>
               </div>
             </div>
@@ -68,7 +68,7 @@ const HomeSlider = () => {
               data-swiper-parallax="-200"
             >
               <div className='flex flex-col justify-center items-center'>
-                <h1 className="text-4xl md:text-4xl font-bold text-center text-white">Every Leaf Deserves Love</h1>
+                <h1 className="text-3xl md:text-4xl font-bold text-center text-white px-5 md:px-0">Every Leaf Deserves Love</h1>
                 <p className="text-lg medium w-[70%] text-center pt-5 text-white">Simplify your plant parenting with automated care tracking and tips.</p>
               </div>
             </div>

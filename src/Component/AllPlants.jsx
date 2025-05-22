@@ -13,7 +13,7 @@ const AllPlants = ({ plants, setSortby }) => {
     return (
         <div className='w-full md:w-11/12 mx-auto py-10 md:px-0 px-4'>
             <h1 className="text-4xl font-bold text-center mb-6">Explore Plants on Plenture</h1>
-            <div className="w-3/12 mx-auto my-5">
+            <div className=" w-1/2 md:w-3/12 mx-auto my-5">
                 <label htmlFor="sort" className="block text-sm font-semibold mb-1 text-center">Sort by:</label>
                 <select onChange={handleSort} name="sort" id="sort" className="w-full px-3 py-2 border rounded-md text-gray-700"
                 >

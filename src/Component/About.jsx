@@ -1,7 +1,7 @@
 
 const About = () => {
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 w-full gap-6 mt-20'>
+        <div className='grid grid-cols-1 md:grid-cols-2 w-full gap-6 mt-7 md:mt-20'>
             <div>
                 <h1 className='text-4xl font-bold mb-5'>About Us</h1>
                 <p className='font-normal text-base leading-8'>
@@ -23,7 +23,7 @@ const About = () => {
                 <img
                     src="https://i.ibb.co/BKVwdZYQ/aboutus.png"
                     alt="About Plant Care Tracker"
-                    className='w-3/4 block mx-auto mt-7 md:rounded-lg'
+                    className='w-3/4 block mx-auto mt-4 md:mt-7 md:rounded-lg'
                 />
             </div>
         </div>
