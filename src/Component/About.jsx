@@ -1,4 +1,3 @@
-import React from 'react';
 
 const About = () => {
     return (
@@ -13,8 +12,6 @@ const About = () => {
                 </p>
                 <ul className='list-disc list-inside font-normal leading-8 mb-3'>
                     <li>Customized reminders for watering, fertilizing, and other care tasks</li>
-                    <li>Tracking growth progress and plant health</li>
-                    <li>Expert tips to avoid common plant care mistakes</li>
                     <li>Support for a wide variety of plant types including succulents, ferns, and bonsai</li>
                     <li>A clean, user-friendly dashboard to manage all your plants in one place</li>
                 </ul>
@@ -24,9 +21,9 @@ const About = () => {
             </div>
             <div>
                 <img
-                    src="https://i.ibb.co/gZhSpkWM/pexels-club-on-racing-2149095487-31067119.jpg"
+                    src="https://i.ibb.co/BKVwdZYQ/aboutus.png"
                     alt="About Plant Care Tracker"
-                    className='w-full block mx-auto mt-14 md:rounded-lg'
+                    className='w-3/4 block mx-auto mt-7 md:rounded-lg'
                 />
             </div>
         </div>

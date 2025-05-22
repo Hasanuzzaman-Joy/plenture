@@ -2,11 +2,15 @@
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from 'react-router';
 import { FaEyeSlash } from 'react-icons/fa';
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import AuthContext from "../../Context/AuthContext";
 import { Bounce, toast, ToastContainer } from "react-toastify";
 
 const Login = () => {
+
+    useEffect(()=>{
+        document.title = "Plenture | Login";
+    },[])
 
     const { googleSign, signIn, setErr, err } = useContext(AuthContext);
 

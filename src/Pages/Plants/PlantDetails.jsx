@@ -1,7 +1,12 @@
 import { Link, useLoaderData } from "react-router";
 import { format } from "date-fns";
+import { useEffect } from "react";
 
 const PlantDetails = () => {
+    useEffect(() => {
+        document.title = "Plenture | PlantDetails";
+    }, [])
+
     const plant = useLoaderData();
 
     const {

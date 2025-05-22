@@ -1,10 +1,14 @@
 
 import AllPlants from '../../Component/AllPlants';
 import Loading from '../../Component/Loading';
-import { Suspense, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 
 const Plants = () => {
-    const[sortby, setSortby] = useState('');
+    useEffect(() => {
+        document.title = "Plenture | Plants";
+    }, [])
+
+    const [sortby, setSortby] = useState('');
 
     const plants = fetch(`http://localhost:5000/plants?sort=${sortby}`).then(res => res.json());
 

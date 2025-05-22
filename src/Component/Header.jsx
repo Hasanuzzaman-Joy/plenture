@@ -66,8 +66,8 @@ const Header = () => {
                     </div>
                     ) : (
                         <div className="navbar-end flex gap-4">
-                            <Link to='/login' className='btn bg-[#006838] text-white md:px-8'>Login</Link>
-                            <Link to='/register' className='btn bg-[#40b93c] text-white md:px-8'>Register</Link>
+                            <Link to='/login' className='btn bg-[#006838] hover:bg-[#40b93c] text-white md:px-8'>Login</Link>
+                            <Link to='/register' className='btn bg-[#40b93c] hover:bg-[#006838] text-white md:px-8'>Register</Link>
                         </div>
                     )
             }

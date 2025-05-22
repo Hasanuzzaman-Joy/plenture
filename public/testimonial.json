@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "name": "Ariana Gomez",
+    "date": "3 days ago",
+    "rating": 4.7,
+    "avatar": "https://i.ibb.co.com/0y4jWqwW/tes-3.png",
+    "feedback": [
+      "Plenture completely changed how I care for my plants. Everything is tracked in one place and easy to manage!",
+      "The watering reminders are so helpful—I haven’t missed a date since I started using it. Highly recommend!"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Md. Farhan",
+    "date": "1 week ago",
+    "rating": 5,
+    "avatar": "https://i.ibb.co.com/BHrrm8VN/tes-1.png",
+    "feedback": [
+      "This app is a life-saver for plant lovers! Super clean and smooth interface with all care details in one view.",
+      "I love how I can add photos and categories for each plant. Would be great to have a mobile app too!"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Minara Akter",
+    "date": "5 days ago",
+    "rating": 4.8,
+    "avatar": "https://i.ibb.co.com/vKBWJW7/tes-2.png",
+    "feedback": [
+      "Simple and effective! I’ve logged all my plants and their watering needs. It keeps everything organized.",
+      "The UI is lovely and matches the natural vibe. I also like the personalized dashboard experience!"
+    ]
+  }
+]

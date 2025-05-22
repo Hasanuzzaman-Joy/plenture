@@ -14,7 +14,7 @@ const Footer = () => {
     </div>
 
     return (
-        <footer className="footer footer-horizontal w-full md:w-11/12 px-4 md:px-0 mx-auto footer-center bg-[#43d58552] text-base-content p-10">
+        <footer className="footer footer-horizontal w-full md:w-11/12 -mt-[42px] px-4 md:px-0 mx-auto footer-center bg-[#43d58552] text-base-content p-10">
             <div className='flex justify-center items-center'>
                 <img src="https://i.ibb.co/7NvMPFQp/logo2.png" className='w-16' alt="logo" />
                 <h1 className='text-[#006838] font-bold text-xl -ml-[15px]'>Plenture</h1>

@@ -2,11 +2,15 @@
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from 'react-router';
 import { FaEyeSlash } from 'react-icons/fa';
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import AuthContext from "../../Context/AuthContext";
 import { Bounce, toast, ToastContainer } from "react-toastify";
 
 const Register = () => {
+
+    useEffect(() => {
+        document.title = "Plenture | Register";
+    }, [])
 
     const { googleSign, registerUser, modifiedProfile, err, setErr } = useContext(AuthContext);
 

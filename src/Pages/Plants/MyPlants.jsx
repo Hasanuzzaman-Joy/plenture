@@ -1,9 +1,13 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router";
 import AuthContext from "../../Context/AuthContext";
 import Swal from "sweetalert2";
 
 const MyPlants = () => {
+    useEffect(() => {
+        document.title = "Plenture | MyPlants";
+    }, [])
+
     const { user } = useContext(AuthContext);
     const plants = useLoaderData();
     const filtered = plants.filter(plant => plant.email === user.email);
@@ -23,20 +27,20 @@ const MyPlants = () => {
                 fetch(`http://localhost:5000/plants/${id}`, {
                     method: "DELETE"
                 })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.deletedCount) {
-                        const newPlantItem = plantItem.filter(plant => plant._id !== id);
-                        setPlantItem(newPlantItem);
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount) {
+                            const newPlantItem = plantItem.filter(plant => plant._id !== id);
+                            setPlantItem(newPlantItem);
 
-                        Swal.fire({
-                            icon: "success",
-                            title: "You've successfully deleted",
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-                    }
-                });
+                            Swal.fire({
+                                icon: "success",
+                                title: "You've successfully deleted",
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                        }
+                    });
             }
         });
     };
