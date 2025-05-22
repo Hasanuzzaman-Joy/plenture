@@ -2,8 +2,13 @@ import { Tooltip } from 'react-tooltip';
 import { GiPineTree } from "react-icons/gi";
 import { useLoaderData, useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
+import { useEffect } from 'react';
 
 const UpdatePlant = () => {
+    useEffect(() => {
+        document.title = "Plenture | Update";
+    }, [])
+
 
     const planted = useLoaderData();
 

@@ -6,3 +6,7 @@
 *{
     font-family: "Poppins", sans-serif;
 }
+
+a.active{
+    color: #40b93c;
+}

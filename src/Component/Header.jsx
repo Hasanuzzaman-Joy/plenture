@@ -3,14 +3,16 @@ import { useContext } from 'react';
 import { NavLink, Link } from 'react-router';
 import AuthContext from '../Context/AuthContext';
 
-const link = <div className='flex flex-col md:flex-row text-lg font-medium'>
-    <li><NavLink to='/'>Home</NavLink></li>
-    <li><NavLink to='/Plants'>All Plants</NavLink></li>
-    <li><NavLink to='/addPlant'>Add Plant</NavLink></li>
-    <li><NavLink to='/myPlants'>My Plants</NavLink></li>
-    <li><NavLink to='/login'>Login</NavLink></li>
-    <li><NavLink to='/register'>Register</NavLink></li>
-</div>
+const link = (
+  <>
+    <li><NavLink to='/' className="px-4 py-2 hover:bg-[#c4f5d4] text-base font-semibold rounded-md">Home</NavLink></li>
+    <li><NavLink to='/Plants' className="px-4 py-2 hover:bg-[#c4f5d4] text-base font-semibold rounded-md">All Plants</NavLink></li>
+    <li><NavLink to='/addPlant' className="px-4 py-2 hover:bg-[#c4f5d4] text-base font-semibold rounded-md">Add Plant</NavLink></li>
+    <li><NavLink to='/myPlants' className="px-4 py-2 hover:bg-[#c4f5d4] text-base font-semibold rounded-md">My Plants</NavLink></li>
+    <li><NavLink to='/login' className="px-4 py-2 hover:bg-[#c4f5d4] text-base font-semibold rounded-md">Login</NavLink></li>
+    <li><NavLink to='/register' className="px-4 py-2 hover:bg-[#c4f5d4] text-base font-semibold rounded-md">Register</NavLink></li>
+  </>
+);
 
 const Header = () => {
 
@@ -33,9 +35,9 @@ const Header = () => {
                         {link}
                     </ul>
                 </div>
-                <div className='flex justify-center items-center'>
+                <div className='flex justify-center items-center -ml-4 md:ml-0'>
                     <img src="https://i.ibb.co/7NvMPFQp/logo2.png" className='w-16' alt="logo" />
-                    <h1 className='text-[#006838] font-bold text-xl -ml-[7px]'>Plenture</h1>
+                    <h1 className='text-[#006838] font-bold text-base md:text-xl -ml-[7px]'>Plenture</h1>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -66,8 +68,8 @@ const Header = () => {
                     </div>
                     ) : (
                         <div className="navbar-end flex gap-4">
-                            <Link to='/login' className='btn bg-[#006838] hover:bg-[#40b93c] text-white md:px-8'>Login</Link>
-                            <Link to='/register' className='btn bg-[#40b93c] hover:bg-[#006838] text-white md:px-8'>Register</Link>
+                            <Link to='/login' className='btn bg-[#006838] hover:bg-[#40b93c] text-[12px] md:text-sm text-white md:px-8'>Login</Link>
+                            <Link to='/register' className='btn bg-[#40b93c] hover:bg-[#006838] text-[12px] md:text-sm text-white md:px-8'>Register</Link>
                         </div>
                     )
             }

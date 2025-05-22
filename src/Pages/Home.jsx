@@ -24,17 +24,17 @@ const Home = () => {
             <div className="w-full md:w-11/12 mx-auto pb-10">
                 <HomeSlider />
             </div>
-            <div className="w-full md:w-11/12 mx-auto pb-10 md:px-0 px-4">
+            <div className="w-full md:w-11/12 mx-auto pb-10">
                 <About />
-                <h1 className="text-4xl font-bold text-center pt-24 pb-10">Recently Added Plants</h1>
-                <div className="grid gid-cols-1 md:grid-cols-3 gap-5">
+                <h1 className="text-4xl font-bold text-center pt-24 pb-10 leading-14 px-4 md:px-0">Recently Added Plants in Plenture</h1>
+                <div className=" md:px-0 px-4 grid gid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                     {
                         plants.map(plant => <Recent key={plant._id} plant={plant} />)
                     }
                 </div>
                 <CTA />
                 <div className='bg-[#f4f3f3] pb-14 w-full mx-auto'>
-                    <h1 className='text-4xl font-bold text-center pt-20 leading-14'>Client Experiences with QuickBill</h1>
+                    <h1 className='text-4xl font-bold text-center pt-20 leading-14 px-4 md:px-0'>Client Experiences with Plenture</h1>
                     <Suspense fallback={<Loading />}>
                         <Testimonial testimonialData={testimonialData}></Testimonial>
                     </Suspense>

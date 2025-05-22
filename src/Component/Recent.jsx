@@ -3,7 +3,7 @@ import { Link } from "react-router";
 const Recent = ({ plant }) => {
 
     return (
-        <div className="card w-96 bg-[#f4f3f3] shadow-lg border border-gray-200 hover:shadow-xl transition duration-300">
+        <div className="card w-full bg-[#f4f3f3] shadow-lg border border-gray-200 hover:shadow-xl transition duration-300">
             <figure className="h-60 overflow-hidden">
                 <img
                     src={plant.plant_photo}

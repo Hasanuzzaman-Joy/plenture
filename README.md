@@ -32,6 +32,8 @@ Plenture is a modern, user-friendly React-based web application that helps plant
 | **React Toastify**        | Beautiful, customizable toast notifications  |
 | **React Tooltip**         | Tooltips for enhancing UI                    |
 | **Lottie React**          | Render Lottie animations in React            |
+| **React star ratings**    | Star-based rating UI component               |
+| **SweetAlert2**           | Beautiful and responsive popup alert library |
 
 ---
 
@@ -41,9 +43,10 @@ Plenture is a modern, user-friendly React-based web application that helps plant
 - **All Plants** – View all users’ added plants
 - **My Plants** – View, update, or delete own plant
 - **Add Plant** – Form to add new plant entries
+- **Update Plant** – Form to edit an existing plant’s details
 - **Login** –  Sign in to your account securely
 - **Register** – Create a new user account
 
 ---
 
-Made with ❤️ by Hasanuzzaman Joy
+## Made with ❤️ by Hasanuzzaman Joy
