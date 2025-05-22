@@ -15,12 +15,12 @@ const AllPlants = ({ plants, setSortby }) => {
             <h1 className="text-4xl font-bold text-center mb-6">Explore Plants on Plenture</h1>
             <div className=" w-1/2 md:w-3/12 mx-auto my-5">
                 <label htmlFor="sort" className="block text-sm font-semibold mb-1 text-center">Sort by:</label>
-                <select onChange={handleSort} name="sort" id="sort" className="w-full px-3 py-2 border rounded-md text-gray-700"
+                <select onChange={handleSort} name="sort" id="sort" className="w-full px-3 py-2 border rounded-md text-gray-700 dark:text-[#ffffff]"
                 >
-                    <option value="">Care Level</option>
-                    <option value="easy">Easy</option>
-                    <option value="moderate">Moderate</option>
-                    <option value="difficult">Difficult</option>
+                    <option value="" className='dark:text-[#000000]'>Care Level</option>
+                    <option value="easy" className='dark:text-[#000000]'>Easy</option>
+                    <option value="moderate" className='dark:text-[#000000]'>Moderate</option>
+                    <option value="difficult" className='dark:text-[#000000]'>Difficult</option>
                 </select>
             </div>
             <div className="overflow-x-auto rounded-box border border-base-content/5 bg-[#f4f3f3]">
@@ -40,7 +40,7 @@ const AllPlants = ({ plants, setSortby }) => {
                     <tbody>
                         {
                             plantedTree.map((plant, index) => (
-                                <tr key={plant._id}>
+                                <tr className="dark:text-[#000000]" key={plant._id}>
                                     <th>{index + 1}</th>
                                     <td>
                                         <img src={plant.plant_photo} alt="" className="w-14 rounded" />

@@ -37,7 +37,7 @@ const Testimonial = ({ testimonialData }) => {
                         </div>
                         <div className="p-4 space-y-2 text-sm ">
                             {test.feedback.map((line, index) => (
-                                <p key={index} className='text-base leading-7'>{line}</p>
+                                <p key={index} className='text-base dark:text-[#000000] leading-7'>{line}</p>
                             ))}
                         </div>
                     </div>

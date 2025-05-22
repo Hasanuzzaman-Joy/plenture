@@ -9,6 +9,25 @@ const AuthProvider = ({ children }) => {
     const [success, setSuccess] = useState('');
     const [err, setErr] = useState('');
     const [loading, setLoading] = useState(true);
+    const [theme, setTheme] = useState('light');
+
+    useEffect(()=>{
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if(savedTheme){
+            setTheme(savedTheme);
+        }
+        else if(systemPrefersDark){
+            setTheme('dark')
+        }
+    },[])
+
+    useEffect(()=>{
+        const html = document.documentElement;
+        html.setAttribute('data-theme',theme);
+        localStorage.setItem('theme', theme);
+    },[theme])
 
     const provider = new GoogleAuthProvider();
 
@@ -61,7 +80,9 @@ const AuthProvider = ({ children }) => {
         setUser,
         logOut,
         modifiedProfile,
-        loading
+        loading,
+        theme,
+        setTheme
     }
 
     return (

@@ -79,7 +79,7 @@ const Login = () => {
     }
 
     return (
-        <div className=' bg-[#f4f3f3] w-full md:w-11/12 mx-auto py-10 md:px-0 px-4'>
+        <div className=' bg-[#f4f3f3] dark:bg-[#000000] w-full md:w-11/12 mx-auto py-10 md:px-0 px-4'>
             <ToastContainer />
             <div className="w-full max-w-md mx-auto bg-base-100 p-4 rounded-md sm:p-8 shadow-xl" style={{
                 boxShadow:

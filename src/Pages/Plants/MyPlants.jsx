@@ -68,7 +68,7 @@ const MyPlants = () => {
                             <tbody>
                                 {
                                     plantItem.map((plant, index) => (
-                                        <tr key={plant._id}>
+                                        <tr className="dark:text-[#000000]" key={plant._id}>
                                             <th>{index + 1}</th>
                                             <td>
                                                 <img src={plant.plant_photo} alt="" className="w-14 rounded" />

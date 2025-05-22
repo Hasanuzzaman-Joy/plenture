@@ -10,3 +10,14 @@
 a.active{
     color: #40b93c;
 }
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@layer base{
+    html{
+        @apply transition-colors duration-300;
+    }
+    body{
+        @apply bg-white dark:bg-black text-black dark:text-gray-100;
+    }
+}
