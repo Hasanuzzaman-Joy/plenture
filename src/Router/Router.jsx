@@ -19,7 +19,7 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                loader: () => fetch('http://localhost:5000/recent-plants'),
+                loader: () => fetch('https://plenture-server.vercel.app/recent-plants'),
                 Component: Home,
                 hydrateFallbackElement: <Loading />
             },
@@ -37,7 +37,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/Plants/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/plants/${params.id}`),
+                loader: ({ params }) => fetch(`https://plenture-server.vercel.app/plants/${params.id}`),
                 element: <ProtectedRoute>
                     <PlantDetails />
                 </ProtectedRoute>,
@@ -51,14 +51,14 @@ const router = createBrowserRouter([
             },
             {
                 path: '/updatePlant/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/plants/${params.id}`),
+                loader: ({ params }) => fetch(`https://plenture-server.vercel.app/plants/${params.id}`),
                 element: <ProtectedRoute>
                     <UpdatePlant />
                 </ProtectedRoute>
             },
             {
                 path: '/myPlants',
-                loader: () => fetch('http://localhost:5000/plants'),
+                loader: () => fetch('https://plenture-server.vercel.app/plants'),
                 element: <ProtectedRoute>
                     <MyPlants />
                 </ProtectedRoute>,

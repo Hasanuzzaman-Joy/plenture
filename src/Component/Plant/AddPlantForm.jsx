@@ -18,7 +18,7 @@ const AddPlantForm = () => {
         const formData = new FormData(form);
         const allData = Object.fromEntries(formData);
 
-        fetch('http://localhost:5000/plants',
+        fetch('https://plenture-server.vercel.app/plants',
             {
                 method: 'POST',
                 headers: {

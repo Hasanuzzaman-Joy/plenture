@@ -10,7 +10,7 @@ const Plants = () => {
 
     const [sortby, setSortby] = useState('');
 
-    const plants = fetch(`http://localhost:5000/plants?sort=${sortby}`).then(res => res.json());
+    const plants = fetch(`https://plenture-server.vercel.app/plants?sort=${sortby}`).then(res => res.json());
 
     return (
         <div>

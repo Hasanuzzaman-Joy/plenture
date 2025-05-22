@@ -23,7 +23,7 @@ const UpdatePlant = () => {
         const formData = new FormData(form);
         const allData = Object.fromEntries(formData);
 
-        fetch(`http://localhost:5000/updatePlant/${_id}`,
+        fetch(`https://plenture-server.vercel.app/updatePlant/${_id}`,
             {
                 method: 'PATCH',
                 headers: {
