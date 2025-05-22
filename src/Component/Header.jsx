@@ -43,7 +43,12 @@ const Header = () => {
                 </div>
                 <div className='flex justify-center items-center -ml-4 md:ml-0'>
                     <img src="https://i.ibb.co/7NvMPFQp/logo2.png" className='w-16' alt="logo" />
-                    <h1 className='text-[#006838] font-bold text-base md:text-xl -ml-[7px]'>Plenture</h1>
+                    {
+                        user ?
+                            <h1 className='text-[#006838] font-bold text-base md:text-xl -ml-[7px]'>Plenture</h1>
+                            :
+                            ''
+                    }
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
