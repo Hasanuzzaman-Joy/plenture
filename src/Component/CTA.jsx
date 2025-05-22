@@ -3,10 +3,10 @@ import { Link } from 'react-router';
 const CTA = () => {
   return (
     <section
-      className="relative bg-fixed bg-cover bg-center bg-no-repeat py-20 px-4 md:px-16"
+      className="relative bg-fixed bg-cover bg-center bg-no-repeat mt-14 py-20 px-4 md:px-16"
       style={{
         backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)),
-          url('https://i.ibb.co.com/jPRNhW7y/cta.jpg')`
+          url('https://i.ibb.co/bgSWNx9f/pexels-minan1398-793012.jpg')`
       }}
     >
 

@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import { use } from 'react';
 import StarRatings from 'react-star-ratings';
 
 const Testimonial = ({ testimonialData }) => {
@@ -8,7 +8,7 @@ const Testimonial = ({ testimonialData }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mx-auto px-7 py-10">
             {
                 testimonial.map(test => (
-                    <div key={test.id} className="flex flex-col w-full max-w-lg p-1 mx-auto divide-y rounded-md shadow bg-white">
+                    <div key={test.id} className="flex flex-col w-full max-w-lg p-1 mx-auto divide-y divide-gray-300 rounded-md shadow bg-white">
                         <div className="flex justify-between p-4">
                             <div className="flex space-x-4">
                                 <div>
@@ -19,7 +19,7 @@ const Testimonial = ({ testimonialData }) => {
                                     />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold">{test.name}</h4>
+                                    <h4 className="font-bold text-[#006838]">{test.name}</h4>
                                     <span className="text-xs dark:text-gray-600">{test.date}</span>
                                 </div>
                             </div>
@@ -35,9 +35,9 @@ const Testimonial = ({ testimonialData }) => {
                                 <div className="text-base font-bold">{test.rating}</div>
                             </div>
                         </div>
-                        <div className="p-4 space-y-2 text-sm dark:text-gray-600">
+                        <div className="p-4 space-y-2 text-sm ">
                             {test.feedback.map((line, index) => (
-                                <p key={index} className='text-base leading-6'>{line}</p>
+                                <p key={index} className='text-base leading-7'>{line}</p>
                             ))}
                         </div>
                     </div>

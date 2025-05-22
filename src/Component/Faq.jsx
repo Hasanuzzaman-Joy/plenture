@@ -5,7 +5,7 @@ const Faq = ({ faqData }) => {
     const faqs = use(faqData);
 
     return (
-        <div className='w-full py-10'>
+        <div className='w-full pt-10 pb-2'>
             <h1 className='text-4xl font-bold text-center py-5 leading-14'>Frequently Asked Questions (FAQs)</h1>
             {faqs.map((faq, index) => (
                 <div key={index} className="collapse collapse-plus border border-[#d6d6d6] shadow my-5">

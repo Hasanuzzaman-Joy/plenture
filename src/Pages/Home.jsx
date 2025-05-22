@@ -29,9 +29,6 @@ const Home = () => {
                     plants.map(plant => <Recent key={plant._id} plant={plant} />)
                 }
             </div>
-            <Suspense fallback={<Loading />}>
-                <Faq faqData={faqData}></Faq>
-            </Suspense>
             <CTA />
             <div className='bg-[#f4f3f3] pb-14 w-full mx-auto'>
                 <h1 className='text-4xl font-bold text-center pt-20 leading-14'>Client Experiences with QuickBill</h1>
@@ -39,6 +36,9 @@ const Home = () => {
                     <Testimonial testimonialData={testimonialData}></Testimonial>
                 </Suspense>
             </div>
+            <Suspense fallback={<Loading />}>
+                <Faq faqData={faqData}></Faq>
+            </Suspense>
         </div>
     );
 };
