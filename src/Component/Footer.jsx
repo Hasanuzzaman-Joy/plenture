@@ -9,8 +9,6 @@ const Footer = () => {
         <li><NavLink to='/Plants'>All Plants</NavLink></li>
         <li><NavLink to='/addPlant'>Add Plant</NavLink></li>
         <li><NavLink to='/myPlants'>My Plants</NavLink></li>
-        <li><NavLink to='/login'>Login</NavLink></li>
-        <li><NavLink to='/register'>Register</NavLink></li>
     </div>
 
     return (

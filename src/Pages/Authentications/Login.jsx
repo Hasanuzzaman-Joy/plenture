@@ -1,16 +1,16 @@
 
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from 'react-router';
-import { FaEyeSlash } from 'react-icons/fa';
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import AuthContext from "../../Context/AuthContext";
 import { Bounce, toast, ToastContainer } from "react-toastify";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Login = () => {
 
-    useEffect(()=>{
+    useEffect(() => {
         document.title = "Plenture | Login";
-    },[])
+    }, [])
 
     const { googleSign, signIn, setErr, err } = useContext(AuthContext);
 
@@ -78,6 +78,8 @@ const Login = () => {
             })
     }
 
+    const [showPassword, setShowPassword] = useState(false);
+
     return (
         <div className=' bg-[#f4f3f3] dark:bg-[#000000] w-full md:w-11/12 mx-auto py-10 md:px-0 px-4'>
             <ToastContainer />
@@ -102,7 +104,7 @@ const Login = () => {
                         {err && <p className='text-sm' style={{ color: 'red' }}>{err}</p>}
                         <div className="space-y-2">
                             <label htmlFor="email" className="block text-sm font-semibold">Email address</label>
-                            <input type="email" name="email" id="email" placeholder="leroy@jenkins.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
+                            <input type="email" required name="email" id="email" placeholder="abc@gmail.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-green-600 border-gray-300 bg-gray-50 text-gray-800 focus:border-gray-600" />
                         </div>
                         <div className="space-y-2">
                             <div className="flex justify-between">
@@ -111,13 +113,16 @@ const Login = () => {
 
                             <div className="relative">
                                 <input
-                                    type="password"
+                                    type={showPassword ? "text" : "password"}
                                     name="password"
                                     id="password"
+                                    required
                                     placeholder="*****"
-                                    className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+                                    className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-green-600 border-gray-300 bg-gray-50 text-gray-800 focus:border-gray-600"
                                 />
-                                <span className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-600"
+                                <span
+                                    onClick={() => setShowPassword(!showPassword)}
+                                    className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-600"
                                 >
                                     <FaEyeSlash />
                                 </span>

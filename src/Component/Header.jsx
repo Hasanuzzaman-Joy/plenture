@@ -11,8 +11,6 @@ const link = (
         <li><NavLink to='/Plants' className="px-4 py-2 hover:bg-[#c4f5d4] hover:text-[#40b93c] text-base font-semibold rounded-md">All Plants</NavLink></li>
         <li><NavLink to='/addPlant' className="px-4 py-2 hover:bg-[#c4f5d4] hover:text-[#40b93c] text-base font-semibold rounded-md">Add Plant</NavLink></li>
         <li><NavLink to='/myPlants' className="px-4 py-2 hover:bg-[#c4f5d4] hover:text-[#40b93c] text-base font-semibold rounded-md">My Plants</NavLink></li>
-        <li><NavLink to='/login' className="px-4 py-2 hover:bg-[#c4f5d4] hover:text-[#40b93c] text-base font-semibold rounded-md">Login</NavLink></li>
-        <li><NavLink to='/register' className="px-4 py-2 hover:bg-[#c4f5d4] hover:text-[#40b93c] text-base font-semibold rounded-md">Register</NavLink></li>
     </>
 );
 
@@ -43,12 +41,7 @@ const Header = () => {
                 </div>
                 <div className='flex justify-center items-center -ml-4 md:ml-0'>
                     <img src="https://i.ibb.co/7NvMPFQp/logo2.png" className='w-16' alt="logo" />
-                    {
-                        user ?
-                            <h1 className='text-[#006838] font-bold text-base md:text-xl -ml-[7px]'>Plenture</h1>
-                            :
-                            ''
-                    }
+                    <h1 className='text-[#006838] font-bold text-base md:text-xl -ml-[7px]'>Plenture</h1>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -89,7 +82,7 @@ const Header = () => {
                         </div>
                     </div>
                     ) : (
-                        <div className="navbar-end flex gap-4">
+                        <div className="navbar-end flex gap-1 md:gap-4">
                             <button onClick={toogleTheme}
                                 aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
                                 className='p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:gray-600 transition-colors cursor-pointer'>

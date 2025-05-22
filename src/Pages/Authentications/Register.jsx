@@ -106,15 +106,15 @@ const Register = () => {
                         {err && <p className='text-sm' style={{ color: 'red' }}>{err}</p>}
                         <div className="space-y-2">
                             <label htmlFor="name" className="block text-sm font-semibold">Name</label>
-                            <input type="text" name="name" id="name" placeholder="Your Name" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
+                            <input type="text" name="name" id="name" placeholder="Your Name" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-green-600 border-gray-300 bg-gray-50 text-gray-800 focus:border-gray-600" required />
                         </div>
                         <div className="space-y-2">
                             <label htmlFor="photo" className="block text-sm font-semibold">Photo-URL</label>
-                            <input type="text" name="photo" id="photo" placeholder="Your Photo url link" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
+                            <input type="text" name="photo" id="photo" placeholder="Your Photo url link" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-green-600 border-gray-300 bg-gray-50 text-gray-800 focus:border-gray-600"/>
                         </div>
                         <div className="space-y-2">
                             <label htmlFor="email" className="block text-sm font-semibold">Email address</label>
-                            <input type="email" name="email" id="email" placeholder="leroy@jenkins.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
+                            <input type="email" name="email" id="email" placeholder="abc@gmail.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-green-600 border-gray-300 bg-gray-50 text-gray-800 focus:border-gray-600" required/>
                         </div>
                         <div className="space-y-2">
                             <div className="flex justify-between">
@@ -127,7 +127,8 @@ const Register = () => {
                                     name="password"
                                     id="password"
                                     placeholder="*****"
-                                    className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+                                    required
+                                    className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-green-600 border-gray-300 bg-gray-50 text-gray-800 focus:border-gray-600"
                                 />
                                 <span className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-600"
                                 >
