@@ -51,7 +51,7 @@ const MyPlants = () => {
 
             {
                 plantItem.length > 0 ? (
-                    <div className="overflow-x-auto rounded-box border border-base-content/5 bg-[#f4f3f3]">
+                    <div className="overflow-x-auto rounded-box border border-base-content/5 dark:bg-[#0a0c13] bg-[#f4f3f3]">
                         <table className="table">
                             <thead className="bg-[#40b93c] text-white">
                                 <tr>
@@ -68,7 +68,7 @@ const MyPlants = () => {
                             <tbody>
                                 {
                                     plantItem.map((plant, index) => (
-                                        <tr className="dark:text-[#000000]" key={plant._id}>
+                                        <tr className="dark:text-[#ffffff]" key={plant._id}>
                                             <th>{index + 1}</th>
                                             <td>
                                                 <img src={plant.plant_photo} alt="" className="w-14 rounded" />
@@ -89,8 +89,8 @@ const MyPlants = () => {
                         </table>
                     </div>
                 ) : (
-                    <div className="bg-[#f4f3f3] text-center space-y-4 py-12 rounded-xl shadow-md">
-                        <h2 className="text-2xl font-bold text-[#006838]">You have not added any plants yet.</h2>
+                    <div className="bg-[#f4f3f3] dark:bg-[#0a0c13] dark:border-white dark:border-[1px] text-center space-y-4 py-12 rounded-xl shadow-md">
+                        <h2 className="text-2xl font-bold dark:text-white text-[#006838]">You have not added any plants yet.</h2>
                         <Link to="/addPlant" className="btn bg-[#006838] hover:bg-[#40b93c] transition-all text-white ">Add a Plant</Link>
                     </div>
                 )

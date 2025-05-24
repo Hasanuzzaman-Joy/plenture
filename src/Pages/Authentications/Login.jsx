@@ -21,7 +21,20 @@ const Login = () => {
     const signGoogle = () => {
         googleSign()
             .then(() => {
-                navigate(location.state || '/');
+                toast.success("You've successfully logged in to the website", {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    transition: Bounce,
+                });
+                setTimeout(() => {
+                    navigate(location.state || '/');
+                }, 1500);
             })
             .catch(error => {
                 toast.error(`${error.message}`, {
@@ -83,7 +96,7 @@ const Login = () => {
     return (
         <div className=' bg-[#f4f3f3] dark:bg-[#000000] w-full md:w-11/12 mx-auto py-10 md:px-0 px-4'>
             <ToastContainer />
-            <div className="w-full max-w-md mx-auto bg-base-100 p-4 rounded-md sm:p-8 shadow-xl" style={{
+            <div className="w-full max-w-md mx-auto bg-base-100 p-4 dark:bg-[#0a0c13] dark:border-white dark:border-[1px] rounded-md sm:p-8 shadow-xl" style={{
                 boxShadow:
                     'rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px',
             }}>
@@ -124,7 +137,9 @@ const Login = () => {
                                     onClick={() => setShowPassword(!showPassword)}
                                     className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-600"
                                 >
-                                    <FaEyeSlash />
+                                {
+                                    showPassword ?  <FaEyeSlash /> : <FaEye />
+                                }
                                 </span>
                             </div>
                         </div>

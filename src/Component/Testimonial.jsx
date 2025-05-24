@@ -5,10 +5,10 @@ const Testimonial = ({ testimonialData }) => {
     const testimonial = use(testimonialData);
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mx-auto px-7 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mx-auto px-4 md:px-7 py-10">
             {
                 testimonial.map(test => (
-                    <div key={test.id} className="flex flex-col w-full max-w-lg p-1 mx-auto divide-y divide-gray-300 rounded-md shadow bg-white">
+                    <div key={test.id} className="flex flex-col w-full max-w-lg p-1 mx-auto divide-y divide-gray-300 rounded-md shadow bg-white dark:bg-[#0a0c13] dark:border-white dark:border-[1px]">
                         <div className="flex justify-between p-4">
                             <div className="flex space-x-4">
                                 <div>
@@ -20,7 +20,7 @@ const Testimonial = ({ testimonialData }) => {
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-[#006838]">{test.name}</h4>
-                                    <span className="text-xs dark:text-gray-600">{test.date}</span>
+                                    <span className="text-xs dark:text-white">{test.date}</span>
                                 </div>
                             </div>
                             <div className="flex flex-col items-center space-x-2 ">
@@ -37,7 +37,7 @@ const Testimonial = ({ testimonialData }) => {
                         </div>
                         <div className="p-4 space-y-2 text-sm ">
                             {test.feedback.map((line, index) => (
-                                <p key={index} className='text-base dark:text-[#000000] leading-7'>{line}</p>
+                                <p key={index} className='text-base dark:text-[#ffffff] leading-7'>{line}</p>
                             ))}
                         </div>
                     </div>

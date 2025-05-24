@@ -40,7 +40,7 @@ const AllPlants = ({ plants, setSortby }) => {
                     <tbody>
                         {
                             plantedTree.map((plant, index) => (
-                                <tr className="dark:text-[#000000]" key={plant._id}>
+                                <tr className="dark:text-[#ffffff] dark:bg-[#0a0c13]" key={plant._id}>
                                     <th>{index + 1}</th>
                                     <td>
                                         <img src={plant.plant_photo} alt="" className="w-14 rounded" />

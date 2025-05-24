@@ -5,18 +5,25 @@ import AuthContext from '../Context/AuthContext';
 import { MdOutlineWbSunny } from "react-icons/md";
 import { PiMoonStarsFill } from "react-icons/pi";
 
-const link = (
-    <>
-        <li><NavLink to='/' className="px-4 py-2 hover:bg-[#c4f5d4] hover:text-[#40b93c] text-base font-semibold rounded-md">Home</NavLink></li>
-        <li><NavLink to='/Plants' className="px-4 py-2 hover:bg-[#c4f5d4] hover:text-[#40b93c] text-base font-semibold rounded-md">All Plants</NavLink></li>
-        <li><NavLink to='/addPlant' className="px-4 py-2 hover:bg-[#c4f5d4] hover:text-[#40b93c] text-base font-semibold rounded-md">Add Plant</NavLink></li>
-        <li><NavLink to='/myPlants' className="px-4 py-2 hover:bg-[#c4f5d4] hover:text-[#40b93c] text-base font-semibold rounded-md">My Plants</NavLink></li>
-    </>
-);
-
 const Header = () => {
 
     const { user, logOut, theme, setTheme } = useContext(AuthContext);
+
+    const link = (
+        <>
+            <li><NavLink to='/' className="px-4 py-2 hover:bg-[#c4f5d4] hover:text-[#40b93c] text-base font-semibold rounded-md">Home</NavLink></li>
+            <li><NavLink to='/Plants' className="px-4 py-2 hover:bg-[#c4f5d4] hover:text-[#40b93c] text-base font-semibold rounded-md">All Plants</NavLink></li>
+            <li><NavLink to='/addPlant' className="px-4 py-2 hover:bg-[#c4f5d4] hover:text-[#40b93c] text-base font-semibold rounded-md">Add Plant</NavLink></li>
+            <li><NavLink to='/myPlants' className="px-4 py-2 hover:bg-[#c4f5d4] hover:text-[#40b93c] text-base font-semibold rounded-md">My Plants</NavLink></li>
+
+            {!user && (
+                <>
+                    <li><NavLink to='/login' className="px-4 py-2 hover:bg-[#c4f5d4] hover:text-[#40b93c] text-base font-semibold rounded-md md:hidden">Login</NavLink></li>
+                    <li><NavLink to='/register' className="px-4 py-2 hover:bg-[#c4f5d4] hover:text-[#40b93c] text-base font-semibold rounded-md md:hidden">Register</NavLink></li>
+                </>
+            )}
+        </>
+    );
 
     const logOutForm = () => {
         logOut()
@@ -94,8 +101,8 @@ const Header = () => {
                                     )
                                 }
                             </button>
-                            <Link to='/login' className='btn bg-[#006838] hover:bg-[#40b93c] text-[12px] md:text-sm text-white md:px-8'>Login</Link>
-                            <Link to='/register' className='btn bg-[#40b93c] hover:bg-[#006838] text-[12px] md:text-sm text-white md:px-8'>Register</Link>
+                            <Link to='/login' className='btn bg-[#006838] hover:bg-[#40b93c] text-[12px] md:text-sm text-white md:px-8 hidden md:flex'>Login</Link>
+                            <Link to='/register' className='btn bg-[#40b93c] hover:bg-[#006838] text-[12px] md:text-sm text-white md:px-8 hidden md:flex'>Register</Link>
                         </div>
                     )
             }
