@@ -33,7 +33,7 @@ const Home = () => {
                     }
                 </div>
                 <CTA />
-                <div className='bg-[#f4f3f3] dark:bg-[#000000] pb-14 w-full mx-auto'>
+                <div className='bg-[#FAFAF9] dark:bg-[#000000] pb-14 w-full mx-auto'>
                     <h1 className='text-4xl font-bold dark:text-[#ffffff] text-center pt-20 leading-14 px-4 md:px-0'>Client Experiences with Plenture</h1>
                     <Suspense fallback={<Loading />}>
                         <Testimonial testimonialData={testimonialData}></Testimonial>

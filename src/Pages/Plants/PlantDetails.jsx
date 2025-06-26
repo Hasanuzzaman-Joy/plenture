@@ -26,7 +26,7 @@ const PlantDetails = () => {
 
     return (
         <div className='w-full md:w-11/12 mx-auto py-10'>
-            <div className="bg-[#f4f3f3] dark:bg-[#0a0c13] w-10/12 mx-auto rounded-xl shadow-lg overflow-hidden md:flex">
+            <div className="bg-[#FAFAF9] dark:bg-[#0a0c13] w-10/12 mx-auto rounded-xl shadow-lg overflow-hidden md:flex">
                 <img
                     src={plant_photo}
                     alt={plantName}

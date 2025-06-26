@@ -17,13 +17,13 @@ const AllPlants = ({ plants, setSortby }) => {
                 <label htmlFor="sort" className="block text-sm font-semibold mb-1 text-center">Sort by:</label>
                 <select onChange={handleSort} name="sort" id="sort" className="w-full px-3 py-2 border rounded-md text-gray-700 dark:text-[#ffffff]"
                 >
-                    <option value="" className='dark:text-[#000000]'>Care Level</option>
-                    <option value="easy" className='dark:text-[#000000]'>Easy</option>
-                    <option value="moderate" className='dark:text-[#000000]'>Moderate</option>
-                    <option value="difficult" className='dark:text-[#000000]'>Difficult</option>
+                    <option value="" className='dark:text-[#333333]'>Care Level</option>
+                    <option value="easy" className='dark:text-[#333333]'>Easy</option>
+                    <option value="moderate" className='dark:text-[#333333]'>Moderate</option>
+                    <option value="difficult" className='dark:text-[#333333]'>Difficult</option>
                 </select>
             </div>
-            <div className="overflow-x-auto rounded-box border border-base-content/5 bg-[#f4f3f3]">
+            <div className="overflow-x-auto rounded-box border border-base-content/5 bg-[#FAFAF9]">
                 <table className="table">
                     <thead className="bg-[#40b93c] text-white">
                         <tr>
