@@ -38,7 +38,7 @@ const AddPlantForm = () => {
                     });
                     
                     setTimeout(() => {
-                        navigate('/myPlants')
+                        navigate('/dashboard/myPlants')
                     }, 2200);
                 }
             })

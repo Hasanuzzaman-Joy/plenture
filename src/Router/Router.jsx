@@ -11,6 +11,8 @@ import Error from "../Pages/Error";
 import Loading from '../Component/Loading'
 import PlantDetails from "../Pages/Plants/PlantDetails";
 import UpdatePlant from "../Pages/Plants/UpdatePlant";
+import DashboardLayouts from "../Layouts/DashboardLayouts";
+import Contact from "../Pages/Authentications/Contact";
 
 const router = createBrowserRouter([
     {
@@ -32,11 +34,39 @@ const router = createBrowserRouter([
                 Component: Login
             },
             {
-                path: '/Plants',
-                Component: Plants
+                path: 'plants',
+                element: <Plants />
             },
             {
-                path: '/Plants/:id',
+                path: 'contact',
+                element: <Contact />
+            },
+            {
+                path: '*',
+                Component: Error
+            }
+        ]
+    },
+    {
+        path: '/dashboard',
+        Component: DashboardLayouts,
+        children: [
+            {
+                index: true,
+                loader: () => fetch('https://plenture-server.vercel.app/plants'),
+                element: <ProtectedRoute>
+                    <MyPlants />
+                </ProtectedRoute>,
+                hydrateFallbackElement: <Loading />
+            },
+            {
+                path: 'Plants',
+                element: <ProtectedRoute>
+                    <Plants />
+                </ProtectedRoute>
+            },
+            {
+                path: 'Plants/:id',
                 loader: ({ params }) => fetch(`https://plenture-server.vercel.app/plants/${params.id}`),
                 element: <ProtectedRoute>
                     <PlantDetails />
@@ -44,31 +74,31 @@ const router = createBrowserRouter([
                 hydrateFallbackElement: <Loading />
             },
             {
-                path: '/addPlant',
+                path: 'addPlant',
                 element: <ProtectedRoute>
                     <AddPlant />
                 </ProtectedRoute>
             },
             {
-                path: '/updatePlant/:id',
+                path: 'updatePlant/:id',
                 loader: ({ params }) => fetch(`https://plenture-server.vercel.app/plants/${params.id}`),
                 element: <ProtectedRoute>
                     <UpdatePlant />
                 </ProtectedRoute>
             },
             {
-                path: '/myPlants',
+                path: 'myPlants',
                 loader: () => fetch('https://plenture-server.vercel.app/plants'),
                 element: <ProtectedRoute>
                     <MyPlants />
                 </ProtectedRoute>,
                 hydrateFallbackElement: <Loading />
+            },
+            {
+                path: '*',
+                Component: Error
             }
         ]
-    },
-    {
-        path: '*',
-        Component: Error
     }
 ])
 

@@ -25,8 +25,8 @@ const PlantDetails = () => {
     } = plant;
 
     return (
-        <div className='w-full md:w-11/12 mx-auto py-10'>
-            <div className="bg-[#FAFAF9] dark:bg-[#0a0c13] w-10/12 mx-auto rounded-xl shadow-lg overflow-hidden md:flex">
+        <div className='w-full mx-auto py-10'>
+            <div className="bg-[#FAFAF9] dark:bg-[#0a0c13] w-11/12 mx-auto rounded-xl shadow-lg overflow-hidden md:flex">
                 <img
                     src={plant_photo}
                     alt={plantName}
@@ -64,7 +64,7 @@ const PlantDetails = () => {
                     </div>
 
                     <div className="pt-4">
-                        <Link to='/plants' className="btn bg-[#006838] hover:bg-[#40b93c] transition-all text-white w-full">Back to All Plants</Link>
+                        <Link to='/dashboard/plants' className="btn bg-[#006838] hover:bg-[#40b93c] transition-all text-white w-full">Back to All Plants</Link>
                     </div>
                 </div>
             </div>

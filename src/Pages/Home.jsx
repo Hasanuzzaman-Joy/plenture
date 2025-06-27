@@ -21,17 +21,19 @@ const Home = () => {
 
     return (
         <>
-            <div className="w-full md:w-11/12 mx-auto dark:-mt-1">
+            <div className="w-full mx-auto dark:-mt-1">
                 <HomeSlider />
             </div>
-            <div className="w-full md:w-11/12 mx-auto pb-10">
+            <div className="w-full md:w-11/12 mx-auto">
                 <About />
                 <h1 className="text-4xl font-bold text-center pt-24 pb-10 leading-14 px-4 md:px-0">Recently Added Plants in Plenture</h1>
-                <div className=" md:px-0 px-4 grid gid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <div className=" md:px-0 px-4 grid gid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
                     {
                         plants.map(plant => <Recent key={plant._id} plant={plant} />)
                     }
                 </div>
+            </div>
+            <div className="w-full mx-auto pb-10">
                 <CTA />
                 <div className='bg-[#FAFAF9] dark:bg-[#000000] pb-14 w-full mx-auto'>
                     <h1 className='text-4xl font-bold dark:text-[#ffffff] text-center pt-20 leading-14 px-4 md:px-0'>Client Experiences with Plenture</h1>
@@ -39,9 +41,11 @@ const Home = () => {
                         <Testimonial testimonialData={testimonialData}></Testimonial>
                     </Suspense>
                 </div>
-                <Suspense fallback={<Loading />}>
-                    <Faq faqData={faqData}></Faq>
-                </Suspense>
+                <div className="w-11/12 mx-auto">
+                    <Suspense fallback={<Loading />}>
+                        <Faq faqData={faqData}></Faq>
+                    </Suspense>
+                </div>
             </div>
         </>
     );

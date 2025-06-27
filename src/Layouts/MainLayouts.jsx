@@ -9,7 +9,7 @@ const MainLayouts = () => {
     const navigation = useNavigation();
 
     return (
-        <div>
+        <>
             {
                 navigation.state === "loading" && <Loading />
             }
@@ -17,7 +17,7 @@ const MainLayouts = () => {
             <Header />
             <Outlet />
             <Footer />
-        </div>
+        </>
     );
 };
 

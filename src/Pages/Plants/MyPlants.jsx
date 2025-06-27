@@ -46,7 +46,7 @@ const MyPlants = () => {
     };
 
     return (
-        <div className='w-full md:w-11/12 mx-auto py-10 md:px-0 px-4'>
+        <div className='w-full mx-auto py-10 md:px-0 px-4'>
             <h1 className="text-4xl font-bold text-center mb-6">My Plant Collection</h1>
 
             {
@@ -59,7 +59,6 @@ const MyPlants = () => {
                                     <th></th>
                                     <th>Plant Name</th>
                                     <th>Category</th>
-                                    <th>Health Status</th>
                                     <th>Last Watered</th>
                                     <th>Upcoming Watering</th>
                                     <th></th>
@@ -75,11 +74,10 @@ const MyPlants = () => {
                                             </td>
                                             <td>{plant.plantName}</td>
                                             <td>{plant.category}</td>
-                                            <td>{plant.healthStatus}</td>
                                             <td>{plant.lastWateredDate}</td>
                                             <td>{plant.nextWateringDate}</td>
                                             <td className="flex gap-2">
-                                                <Link to={`/updatePlant/${plant._id}`} className='btn bg-[#006838] hover:bg-[#40b93c] transition-all text-white md:px-8'>Update</Link>
+                                                <Link to={`/dashboard/updatePlant/${plant._id}`} className='btn bg-[#006838] hover:bg-[#40b93c] transition-all text-white md:px-8'>Update</Link>
                                                 <button onClick={() => handleDelete(plant._id)} className='btn bg-[#006838] hover:bg-[#40b93c] transition-all text-white md:px-8'>Delete</button>
                                             </td>
                                         </tr>

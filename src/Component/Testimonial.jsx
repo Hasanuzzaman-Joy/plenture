@@ -5,10 +5,10 @@ const Testimonial = ({ testimonialData }) => {
     const testimonial = use(testimonialData);
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mx-auto px-4 md:px-7 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-11/12 mx-auto py-10">
             {
                 testimonial.map(test => (
-                    <div key={test.id} className="flex flex-col w-full max-w-lg p-1 mx-auto divide-y divide-gray-300 rounded-md shadow bg-white dark:bg-[#0a0c13] dark:border-white dark:border-[1px]">
+                    <div key={test.id} className="flex flex-col w-full p-1 mx-auto divide-y divide-gray-300 rounded-md shadow bg-white dark:bg-[#0a0c13] dark:border-white dark:border-[1px]">
                         <div className="flex justify-between p-4">
                             <div className="flex space-x-4">
                                 <div>

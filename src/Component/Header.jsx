@@ -2,19 +2,27 @@
 import { useContext } from 'react';
 import { NavLink, Link } from 'react-router';
 import AuthContext from '../Context/AuthContext';
-import { MdOutlineWbSunny } from "react-icons/md";
-import { PiMoonStarsFill } from "react-icons/pi";
+// import { MdOutlineWbSunny } from "react-icons/md";
+// import { PiMoonStarsFill } from "react-icons/pi";
 
 const Header = () => {
 
-    const { user, logOut, theme, setTheme } = useContext(AuthContext);
+    // const { user, logOut, theme, setTheme } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
     const link = (
         <>
             <li><NavLink to='/' className="px-4 py-2 hover:bg-[#c4f5d4] hover:text-[#40b93c] text-base font-semibold rounded-md">Home</NavLink></li>
-            <li><NavLink to='/Plants' className="px-4 py-2 hover:bg-[#c4f5d4] hover:text-[#40b93c] text-base font-semibold rounded-md">All Plants</NavLink></li>
-            <li><NavLink to='/addPlant' className="px-4 py-2 hover:bg-[#c4f5d4] hover:text-[#40b93c] text-base font-semibold rounded-md">Add Plant</NavLink></li>
-            <li><NavLink to='/myPlants' className="px-4 py-2 hover:bg-[#c4f5d4] hover:text-[#40b93c] text-base font-semibold rounded-md">My Plants</NavLink></li>
+            <li><NavLink to='/plants' className="px-4 py-2 hover:bg-[#c4f5d4] hover:text-[#40b93c] text-base font-semibold rounded-md">All Plants</NavLink></li>
+            <li><NavLink to='/contact' className="px-4 py-2 hover:bg-[#c4f5d4] hover:text-[#40b93c] text-base font-semibold rounded-md">Contact</NavLink></li>
+
+            {
+                user ?
+                    <>
+                        <li><NavLink to='/dashboard' className="px-4 py-2 hover:bg-[#c4f5d4] hover:text-[#40b93c] text-base font-semibold rounded-md">Dashboard</NavLink></li>
+                    </> : ""
+            }
+
 
             {!user && (
                 <>
@@ -29,13 +37,13 @@ const Header = () => {
         logOut()
     }
 
-    const toogleTheme = () => {
-        setTheme(theme === 'light' ? 'dark' : 'light')
-    }
+    // const toogleTheme = () => {
+    //     setTheme(theme === 'light' ? 'dark' : 'light')
+    // }
 
     return (
-        <div className="navbar w-full md:max-w-7xl mx-auto border-b-[0.5px] border-[#dbdbdb]">
-            <div className="w-full md:w-11/12 mx-auto flex justify-between items-center">
+        <div className="navbar sticky top-0 z-50 w-full bg-[#ffffff] border-b-[0.5px] border-[#dbdbdb]">
+            <div className="w-11/12 mx-auto flex justify-between items-center">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -61,7 +69,7 @@ const Header = () => {
                 {
                     user ?
                         (<div className="navbar-end flex gap-4">
-                            <button onClick={toogleTheme}
+                            {/* <button onClick={toogleTheme}
                                 aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
                                 className='p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:gray-600 transition-colors cursor-pointer'>
                                 {
@@ -71,7 +79,7 @@ const Header = () => {
                                         <span className='text-xl'><PiMoonStarsFill /></span>
                                     )
                                 }
-                            </button>
+                            </button> */}
                             <div className="dropdown dropdown-left dropdown-bottom">
                                 <div tabIndex={0}>
                                     <div className="avatar avatar-online cursor-pointer">
@@ -91,7 +99,7 @@ const Header = () => {
                         </div>
                         ) : (
                             <div className="navbar-end flex gap-1 md:gap-4">
-                                <button onClick={toogleTheme}
+                                {/* <button onClick={toogleTheme}
                                     aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
                                     className='p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:gray-600 transition-colors cursor-pointer'>
                                     {
@@ -101,7 +109,7 @@ const Header = () => {
                                             <span className='text-xl'><PiMoonStarsFill /></span>
                                         )
                                     }
-                                </button>
+                                </button> */}
                                 <Link to='/login' className='btn bg-[#006838] hover:bg-[#40b93c] text-[12px] md:text-sm text-white md:px-8 hidden md:flex'>Login</Link>
                                 <Link to='/register' className='btn bg-[#40b93c] hover:bg-[#006838] text-[12px] md:text-sm text-white md:px-8 hidden md:flex'>Register</Link>
                             </div>

@@ -14,7 +14,6 @@ const Error = () => {
             {
                 navigation.state === "loading" && <Loading />
             }
-            <Header />
             <div className="flex flex-col items-center justify-center min-h-screen p-2 bg-white text-center w-11/12 mx-auto">
                 <div className="w-full max-w-md">
                     <h1 className="text-3xl font-bold mt-4 text-gray-800">404 - Page Not Found</h1>
@@ -22,7 +21,6 @@ const Error = () => {
                     <ErrorAnimations />
                 </div>
             </div>
-            <Footer />
         </>
     );
 };
