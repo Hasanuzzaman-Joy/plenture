@@ -2,16 +2,26 @@ import { Outlet, useNavigation, Link } from 'react-router';
 import Loading from '../Component/Loading';
 import ScrollToTop from '../Component/ScrollToTop';
 import { useContext, useState } from "react";
-import { FaBars, FaTimes, FaLeaf, FaPlusCircle, FaListUl } from "react-icons/fa";
+import { FaBars, FaTimes, FaLeaf, FaPlusCircle, FaListUl, FaSignOutAlt } from "react-icons/fa";
 import AuthContext from '../Context/AuthContext';
+import { ToastContainer, toast } from 'react-toastify';
 
 const DashboardLayouts = () => {
     const navigation = useNavigation();
     const [isOpen, setIsOpen] = useState(false);
-    const { user } = useContext(AuthContext);  
+    const { user, logOut } = useContext(AuthContext);  
+
+    const handleLogout = () => {
+        logOut()
+            .then(() => {
+                toast.success("Logged out successfully!");
+            })
+            .catch(error => console.error(error));
+    }
 
     return (
         <>
+            <ToastContainer />
             {navigation.state === "loading" && <Loading />}
             <ScrollToTop />
 
@@ -29,7 +39,7 @@ const DashboardLayouts = () => {
                         {/* User Info below logo */}
                         {user ? (
                             <div className="mt-2">
-                                <p className="font-semibold">{user.name || "No Name"}</p>
+                                <p className="font-semibold">{user.displayName || "No Name"}</p>
                                 <p className="text-sm text-green-200">{user.email || "No Email"}</p>
                             </div>
                         ) : (
@@ -51,7 +61,31 @@ const DashboardLayouts = () => {
                             <FaLeaf />
                             All Plants
                         </Link>
+
+                        {/* Logout for mobile */}
+                        {user && (
+                            <button
+                                onClick={handleLogout}
+                                className="md:hidden bg-[#006838] hover:bg-[#00522e] text-white p-2 rounded font-semibold flex items-center gap-2 cursor-pointer"
+                            >
+                                <FaSignOutAlt />
+                                Logout
+                            </button>
+                        )}
                     </div>
+
+                    {/* Logout for Desktop */}
+                    {user && (
+                        <div className="p-4 mt-auto">
+                            <button
+                                onClick={handleLogout}
+                                className="bg-[#006838] hover:bg-[#00522e] text-white p-2 rounded font-semibold flex items-center gap-2 w-full cursor-pointer"
+                            >
+                                <FaSignOutAlt />
+                                Logout
+                            </button>
+                        </div>
+                    )}
                 </div>
 
                 {/* Mobile Top Navbar */}
