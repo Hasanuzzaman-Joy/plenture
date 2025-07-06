@@ -97,7 +97,7 @@ const DashboardLayouts = () => {
                 </div>
 
                 {/* Main Content */}
-                <div className="flex-1 bg-[#FAFAF9] p-4 overflow-auto">
+                <div className="flex-1 bg-[#FAFAF9] dark:bg-[#000000] p-4 overflow-auto">
                     <Outlet />
                 </div>
             </div>
